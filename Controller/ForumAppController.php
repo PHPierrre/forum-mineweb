@@ -17,7 +17,7 @@ class ForumAppController extends AppController
 
     public $atualTheme;
 
-    protected $version = '1.4.3';
+    protected $version = '1.4.4';
 
 
     protected function date($date, $day = true)
@@ -211,9 +211,11 @@ class ForumAppController extends AppController
 
     protected function buildUri($type, $name, $id, $anchor =  '')
     {
-        if(!empty($anchor)){
+        $name = h($name);
+
+        if (!empty($anchor)) {
             return $this->base.'/'.$type.'/'.$this->replaceSpace($name).'.'.$id.'/#'.$anchor;
-        }else{
+        } else {
             return $this->base.'/'.$type.'/'.$this->replaceSpace($name).'.'.$id.'/';
         }
     }
