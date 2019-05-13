@@ -28,3 +28,6 @@ Router::connect('/message/:slug.:id/:page', ['controller' => 'message', 'action'
 Router::connect('/forum/css/custom.css', ['controller' => 'theme', 'action' => 'generate', 'plugin' => 'forum']);
 
 Router::connect('/forum/redirect/:type/:id', ['controller' => 'redirect', 'action' => 'redirectForum', 'plugin' => 'forum'], ['pass' => ['type', 'id'], 'id' => '[0-9]+']);
+
+//API
+Router::connect('/forum/api/:action', ['controller' => 'api', 'plugin' => 'forum']);
